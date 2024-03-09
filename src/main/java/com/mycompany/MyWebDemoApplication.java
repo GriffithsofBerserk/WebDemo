@@ -8,7 +8,5 @@ public class MyWebDemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyWebDemoApplication.class, args);
-		System.out.println("deneme");
 	}
-
 }
