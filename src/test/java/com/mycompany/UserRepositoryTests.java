@@ -34,4 +34,14 @@ public class UserRepositoryTests {
         Assertions.assertThat(savedUser.getId()).isPositive();
 
     }
+
+    @Test
+    public void testListAll() {
+        Iterable<User> users = repo.findAll();
+        Assertions.assertThat(users).hasSizeGreaterThan(0);
+
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
 }
