@@ -46,8 +46,19 @@ public class UserController {
             model.addAttribute("pageTitle","Edit User (ID: " + id + ")");
             return "user_form";
         } catch (UserNotFoundException e) {
-            reda.addFlashAttribute("message","The user not found");
+            reda.addFlashAttribute("message", e.getMessage());
             return "redirect:/users";
         }
+    }
+
+    @GetMapping("/users/delete/{id}")
+    public String deleteUser(@PathVariable("id") Integer id, RedirectAttributes reda) {
+        try {
+            service.delete(id);
+            reda.addFlashAttribute("message", "User ID: " + id + " has been deleted.");
+        } catch (UserNotFoundException e) {
+            reda.addFlashAttribute("message", e.getMessage());
+        }
+        return "redirect:/users";
     }
 }
