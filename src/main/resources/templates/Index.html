@@ -15,11 +15,23 @@
             white-space: nowrap;
             animation: marquee 5s linear infinite;
         }
+
+        @keyframes colorChange {
+            0% { color: red; }
+            25% { color: blue; }
+            50% { color: green; }
+            75% { color: orange; }
+            100% { color: purple; }
+        }
+
+        h1.color-changing-text {
+            animation: colorChange 1s linear infinite alternate;
+        }
     </style>
 </head>
 <body>
     <div class="container-fluid text-center">
-        <h1>CRUD Operations</h1>
+        <h1 class="color-changing-text">CRUD Operations</h1>
         <a href="#" th:class="'marquee-text'" th:href="@{/users}">Manage Users</a>
     </div>
 </body>
