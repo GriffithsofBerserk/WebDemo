@@ -27,6 +27,9 @@
         h1.color-changing-text {
             animation: colorChange 1s linear infinite alternate;
         }
+        .popup{
+
+        }
     </style>
 </head>
 <body>
@@ -37,9 +40,9 @@
 
     <div class="popup">
         <div class="popup-content">
-            <img src="" alt="User">
+            <img th:src="@{/static/sampleform.png}" alt="User">
             <input type="text" placeholder="Telefon Numarası">
-            <a class="button">OK</a>
+            <a href="#" class="button">OK</a>
         </div>
     </div>
     <script>
